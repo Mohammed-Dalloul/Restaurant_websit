@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happiness Restaurant</title>
+
+    <style>
+        body {
+            width: 99%;
+            height: 98%;
+            background-repeat: no-repeat;
+            direction: rtl;
+        }
+
+        :root {
+            --main-color: rgb(255, 217, 0);
+            width: fit-content;
+            height: fit-content;
+            background-image: linear-gradient(to right, rgb(255, 0, 157), rgb(156, 0, 177));
+        }
+
+        .cooks div {
+            background-color: var(--main-color);
+            width: 18%;
+            margin: 10px;
+            height: 50px;
+            font-weight: bold;
+        }
+
+        .cooks div:hover {
+            /* border: 2px dashed purple; */
+            outline: 4px solid var(--main-color);
+            background-image: linear-gradient(to right, rgb(255, 109, 194), rgb(189, 0, 116));
+            color: white;
+            transform: translateY(20px);
+
+
+        }
+
+        .cooks {
+            display: inline-flex;
+            width: 100%;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .cooks p {
+            text-align: center;
+        }
+
+        .content {
+            width: 98%;
+            height: 600px;
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 40px;
+
+        }
+
+        .price {
+            width: 30%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin: 10px;
+        }
+
+
+        .price1,
+        .price2 {
+            background-color: var(--main-color);
+            height: 49%;
+        }
+
+        .price1:hover,
+        .price2:hover {
+            box-shadow: 2px 2px 9px 2px purple inset;
+        }
+
+        .price1 p,
+        .price2 p {
+            text-align: center;
+            margin-top: 40%;
+            font-size: 20px;
+
+        }
+
+        .price span {
+            font-size: 40px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+
+
+        .img1 {
+
+            width: 80%;
+            height: 100%;
+            min-width: 40px;
+            background-image: url("img1.PNG");
+            background-size: cover;
+            background-repeat: no-repeat;
+            direction: ltr !important;
+            display: inline-block;
+
+            margin-top: 10px;
+        }
+
+        .div-p1,
+        .div-p2 {
+            background-color: var(--main-color);
+            width: fit-content;
+            align-items: center;
+            margin-left: 10%;
+
+
+        }
+
+        .div-p1 p {
+            font-size: 30px;
+            padding: 10px;
+            margin-top: 100%;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .div-p2 p {
+            font-size: 20px;
+            padding: 10px;
+
+        }
+
+        .cards {
+            width: 98%;
+            height: fit-content;
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            margin: auto;
+
+        }
+
+        .cards div:hover {
+            background-color: black;
+            color: blanchedalmond;
+            box-shadow: 10px 10px 8px -1px var(--main-color);
+            transition: 0.5s;
+        }
+
+        p::selection {
+            background-color: blueviolet;
+            color: white;
+        }
+
+        .cards div {
+            background-color: white;
+            width: 23%;
+            height: 150px;
+            display: inline-flex;
+            flex-direction: column;
+            overflow: auto;
+
+        }
+
+        .cards p,
+        h3,
+        i {
+            text-align: center;
+            margin: auto;
+        }
+
+        .cards i {
+            font-size: 30px;
+        }
+
+        .cards p {
+            font-weight: bold;
+            color: rgb(121, 121, 121);
+        }
+
+        .featured {
+            width: 97%;
+            height: 400px;
+            background-color: white;
+            direction: ltr;
+            display: flex;
+            margin: auto;
+            margin-bottom: 20px;
+            margin-top: 20px;
+            overflow: auto;
+        }
+
+        .featured img {
+            height: 50%;
+            width: 40%;
+            size: b4;
+            margin-top: 70px;
+            margin-left: 20px;
+        }
+
+        .featured p {
+            margin-top: 150px;
+            font-family: cursive;
+        }
+
+        .featured .span {
+            font-weight: bold;
+            font-size: 25px;
+        }
+
+        .lm {
+            background-color: var(--main-color);
+            padding: 10px;
+            border: none;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .lm:hover {
+            color: white;
+            background-color: blueviolet;
+        }
+
+        .pictures1,
+        .pictures2 {
+            width: 97%;
+            height: fit-content;
+			max-height: 250px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .pictures1 {
+            margin-bottom: 20px;
+        }
+
+        .pictures1 img,
+        .pictures2 img {
+            width: calc(97% / 5);
+        }
+
+        .pictures1 img:nth-child(odd) {
+            transition: 0.3s;
+            filter: blur(4px);
+        }
+
+        .pictures2 img:nth-child(even) {
+            transition: 0.3s;
+            filter: blur(4px);
+        }
+
+        .pictures1 img:hover,
+        .pictures2 img:hover {
+            filter: blur(0px);
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="cooks">
+        <div class="booking">
+            <p>الحجز</p>
+        </div>
+        <div class="sweets">
+            <p>حلويات</p>
+        </div>
+        <div class="drinks">
+            <p>مشروبات</p>
+        </div>
+        <div class="burger">
+            <p>برجر</p>
+        </div>
+        <div class="shawarma">
+            <p>شاورما</p>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="price">
+            <div class="price1">
+                <p><span>12.5 شيكل</span><br><b>شاورما</b></p>
+            </div>
+            <div class="price2">
+                <p><span>25.3 شيكل</span><br><b>برجر</b></p>
+            </div>
+        </div>
+
+        <div class="img1">
+            <div class="div-p1">
+                <p>شاورما بالخبزة</p>
+            </div>
+            <div class="div-p2">
+                <p>! الز شاورما مع الخبزة</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="cards">
+        <div class="card1">
+            <i>🌮</i>
+            <h3>شاورما</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div class="card2">
+            <i>🍺</i>
+            <h3>مشروبات</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit..</p>
+        </div>
+        <div class="card3">
+            <i>🍔</i>
+            <h3>برجر</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div class="card4">
+            <i>🎵</i>
+            <h3>موسيقى</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        </div>
+    </div>
+
+    <div class="featured">
+        <img src="img-shawarma.PNG" alt="not the found">
+        <p class="p1"><span class="span">Featured shawrma</span> <br>
+            لزيزة طرية من الداخل وهشة من الخارج<br>
+            الطعم الذي ينتظره الجميع منذ قديم الأزل<br><br><button class="lm">Learn More <i>></i></button></p>
+    </div>
+
+    <div class="pictures1">
+        <img src="img2.jpg" alt="not the found">
+        <img src="img3.jpg" alt="not the found">
+        <img src="img4.jpg" alt="not the found">
+        <img src="img5.jpg" alt="not the found">
+        <img src="img6.jpg" alt="not the found">
+    </div>
+    <div class="pictures2">
+        <img src="img7.jpg" alt="not the found">
+        <img src="img8.jpg" alt="not the found">
+        <img src="img9.jpg" alt="not the found">
+        <img src="img10.jpg" alt="not the found">
+        <img src="img11.jpg" alt="not the found">
+    </div>
+</body>
+
+</html>
